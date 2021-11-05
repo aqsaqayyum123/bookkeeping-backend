@@ -9,5 +9,6 @@ app.use('/api/user', user);
 app.use('/api/group', group);
 app.use('/api/friend', friend);
 app.use('/api/expense', expense);
+app.use('/api/test', 'test');
 
 module.exports = app;
