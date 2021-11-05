@@ -8,7 +8,8 @@
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --fix --ignore-pattern 'node_modules/*'",
-    "format": "prettier -w ."
+    "format": "prettier -w .",
+    "build": "node app.js"
   },
   "husky": {
     "hooks": {
@@ -49,7 +50,8 @@
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.6.5",
     "swagger-jsdoc": "^6.1.0",
-    "swagger-ui-express": "^4.1.6"
+    "swagger-ui-express": "^4.1.6",
+    "vite": "^2.6.13"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
