@@ -82,5 +82,5 @@ router.put('/changePassword', bodyParser, auth, userController.changePassword);
  *        description: user deleted successfully
  */
 router.delete('/deleteUser', bodyParser, auth, userController.deleteUser);
-
+router.get('/getUser', bodyParser, userController.getUser);
 module.exports = router;

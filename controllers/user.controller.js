@@ -226,3 +226,9 @@ exports.deleteUser = async function (req, res) {
     console.log(ex);
   }
 };
+
+//router.get('/getUser', bodyParser, userController.getUser);
+
+exports.getUser = async function (req, res) {
+  res.send('getting user data');
+};
