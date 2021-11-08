@@ -4,7 +4,7 @@ module.exports = {
       id: {
         allowNull: false,
         auKtoIncrement: true,
-        primaryey: true,
+        primaryKey: true,
         type: Sequelize.INTEGER,
       },
       name: {
@@ -17,13 +17,13 @@ module.exports = {
         type: Sequelize.STRING,
       },
       user_id: {
-        allowNull: false,
         type: Sequelize.INTEGER,
-        foreignKey: true,
-        references: {
-          modelName: 'Users',
-          key: 'id',
-        },
+        // references: {
+        //   // Required field
+        //   model: 'Users',
+        //   key: 'id',
+        // },
+        // onDelete: 'cascade',
       },
       createdAt: {
         allowNull: false,

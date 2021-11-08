@@ -8,13 +8,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsTo(models.Users, {
-        foreignKey: 'id',
-      });
-
-      this.belongsToMany(models.Friends, {
-        through: 'Friends_Groups',
-      });
+      // this.belongsTo(models.User, {
+      //   foreignKey: 'id',
+      //   constraints: false,
+      // });
+      // this.belongsToMany(models.Friends, {
+      //   through: 'Friends_Groups',
+      // });
     }
   }
   Groups.init(

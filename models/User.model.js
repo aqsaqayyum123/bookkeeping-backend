@@ -1,4 +1,3 @@
-const { options } = require('joi');
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Users extends Model {
@@ -16,12 +15,6 @@ module.exports = (sequelize, DataTypes) => {
   }
   Users.init(
     {
-      uuid: {
-        type: DataTypes.STRING,
-        primaryKey: true,
-        autoIncrement: false,
-        allowNull: false,
-      },
       name: DataTypes.STRING,
       email: DataTypes.STRING,
       mobile: DataTypes.INTEGER,
