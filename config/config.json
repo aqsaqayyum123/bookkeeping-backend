@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "postgres",
-    "password": 12345,
-    "database": "bookkeeping",
-    "host": "127.0.0.1",
+    "username": "bsgxgsnaiirygc",
+    "password": "43ad8b88e23f634515f063ce7a263020701f489a3920755fc906aeb1e6898941",
+    "database": "d70lman372mgn0",
+    "host": "ec2-54-226-56-198.compute-1.amazonaws.com",
     "dialect": "postgres"
   },
   "test": {
-    "username": "postgres",
-    "password": 12345,
-    "database": "bookkeeping",
-    "host": "127.0.0.1",
+    "username": "bsgxgsnaiirygc",
+    "password": "43ad8b88e23f634515f063ce7a263020701f489a3920755fc906aeb1e6898941",
+    "database": "d70lman372mgn0",
+    "host": "ec2-54-226-56-198.compute-1.amazonaws.com",
     "dialect": "postgres"
   },
   "production": {
-    "username": "postgres",
-    "password": 12345,
-    "database": "bookkeeping",
-    "host": "127.0.0.1",
+    "username": "bsgxgsnaiirygc",
+    "password": "43ad8b88e23f634515f063ce7a263020701f489a3920755fc906aeb1e6898941",
+    "database": "d70lman372mgn0",
+    "host": "ec2-54-226-56-198.compute-1.amazonaws.com",
     "dialect": "postgres"
   }
 }
