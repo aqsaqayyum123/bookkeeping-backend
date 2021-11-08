@@ -231,4 +231,15 @@ exports.deleteUser = async function (req, res) {
 
 exports.getUser = async function (req, res) {
   res.send('getting user data');
+  try {
+    const user = await db.Users.findAll();
+    console.log(user);
+    if (user)
+      return res.status(200).send({
+        user: user,
+      });
+    return res.status(404).send('No record found');
+  } catch (ex) {
+    console.log(ex);
+  }
 };
