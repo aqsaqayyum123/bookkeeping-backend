@@ -1,6 +1,6 @@
 const admin = require('firebase-admin');
-var serviceAccount = require('../serviceAccountKey.json');
-admin.initializeApp({ credential: admin.credential.cert(serviceAccount) });
+// var serviceAccount = require('../serviceAccountKey.json');
+// admin.initializeApp({ credential: admin.credential.cert(serviceAccount) });
 
 async function auth(req, res, next) {
   const token = req.header('x-auth-token');
