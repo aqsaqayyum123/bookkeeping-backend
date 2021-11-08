@@ -230,7 +230,7 @@ exports.deleteUser = async function (req, res) {
 //router.get('/getUser', bodyParser, userController.getUser);
 
 exports.getUser = async function (req, res) {
-  res.send('getting user data');
+  //res.send('getting user data');
   try {
     const user = await db.Users.findAll();
     console.log(user);
