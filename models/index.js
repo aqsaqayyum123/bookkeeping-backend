@@ -6,6 +6,7 @@ const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
+console.log('env', env);
 let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
@@ -25,7 +26,7 @@ fs.readdirSync(__dirname)
     );
   })
   .forEach((file) => {
-    console.log(file);
+    //console.log(file);
     const model = require(path.join(__dirname, file))(
       sequelize,
       Sequelize.DataTypes

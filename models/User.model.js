@@ -8,13 +8,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.hasMany(models.Groups);
-      this.hasMany(models.Friends);
-      this.hasMany(models.Expenses);
+      // this.belongsTo(models.Groups, {
+      //   foreignKey: 'user_id',
+      // });
+      // this.hasMany(models.Friends);
+      // this.hasMany(models.Expenses);
     }
   }
   Users.init(
     {
+      uuid: {
+        type: DataTypes.STRING,
+        primaryKey: true,
+        autoIncrement: false,
+        allowNull: false,
+      },
       name: DataTypes.STRING,
       email: DataTypes.STRING,
       mobile: DataTypes.INTEGER,

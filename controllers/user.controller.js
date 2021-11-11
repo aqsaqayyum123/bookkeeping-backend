@@ -39,23 +39,28 @@ exports.signUp = async function (req, res, _next) {
     const { error } = valid.validateUserSchema(req.body);
     if (error) return res.status(400).send(error.details[0].message);
     //if phone number already exist
+
     const user = await db.Users.findOne({
       where: {
         email: req.body.email,
       },
     });
-    console.log('user:::::: ', user);
-    if (user != null) return res.status(400).send('Email already registered!');
+    //res.send({ body: user });
+    if (user != null)
+      return res
+        .status(400)
+        .send({ status: 404, msg: 'Email already registered!' });
     auth = getAuth();
     userCredential = await createUserWithEmailAndPassword(
       auth,
       req.body.email,
       req.body.password
     );
+    //res.send({ body: userCredential });
     firebaseUser = userCredential.user;
     uuid = firebaseUser.uid;
     token = await auth.currentUser.getIdToken();
-    // Register User
+    //Register User
     const newUser = {
       uuid: uuid,
       name: req.body.name,
@@ -64,14 +69,20 @@ exports.signUp = async function (req, res, _next) {
       mobile: req.body.mobile,
       isVerified: false,
     };
+    //res.send({ body: newUser });
+
     const salt = await bcrypt.genSalt(10);
     newUser.password = await bcrypt.hash(newUser.password, salt);
-    let addUser = null;
+    //let addUser = null;
     try {
       addUser = await db.Users.create(newUser);
+      //res.send({ body: addUser });
+
       await sendEmailVerification(auth.currentUser);
       res.send(req, res, { user: newUser, msg: 'verification email sent' });
     } catch (ex) {
+      //res.send({ error: ex });
+
       for (i in ex.error) {
         return res.send(ex.error[i].message);
       }
@@ -83,7 +94,10 @@ exports.signUp = async function (req, res, _next) {
       msg: 'User Registered Successfully',
     });
   } catch (error) {
-    return res.send(error);
+    return res.send({
+      error: error,
+      msg: 'something went wrong. Please try again',
+    });
   }
 };
 
@@ -130,7 +144,10 @@ exports.logIn = async function (req, res, _next) {
       msg: 'Sign in Successfully',
     });
   } catch (error) {
-    return res.send(error);
+    return res.send({
+      error: error,
+      msg: 'something went wrong. Please try again',
+    });
   }
 };
 

@@ -8,10 +8,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // this.belongsTo(models.User, {
-      //   foreignKey: 'id',
-      //   constraints: false,
-      // });
+      //this.hasMany(models.User);
       // this.belongsToMany(models.Friends, {
       //   through: 'Friends_Groups',
       // });

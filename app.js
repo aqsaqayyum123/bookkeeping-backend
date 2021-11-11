@@ -39,7 +39,7 @@ async function dbconnection() {
 }
 dbconnection();
 
-app.get('/', (req, res) => res.send('index'));
+app.get('/', (req, res) => res.send('Bookkeeping Portal Backend API`s'));
 
 try {
   const PORT = process.env.PORT;
